@@ -18,7 +18,7 @@
     <p/>
     <?php
       
-      echo "gethostname = ".gethostname();
+      echo "gethostname = ".gethostname(). "<br />";
 
       $Database   = "REPLACE_WITH_DATABASE";
       $DBUser     = "REPLACE_WITH_DBUSER";
