@@ -273,7 +273,7 @@
 		  "chown apache:apache /var/www/html/*\n",
 		  
 		  "# Run PHP initialization script\n",
-		  "php /var/www/html/create.php\n"
+		  "php /var/www/html/createDB.php\n"
 		  
         ]]}}
       }
