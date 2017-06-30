@@ -19,14 +19,18 @@
     <p/>
     <?php
       
+//                   "define('DB_NAME',          '", {"Ref" : "DBName"}, "');\n",
+//                   "define('DB_USER',          '", {"Ref" : "DBUsername"}, "');\n",
+//                   "define('DB_PASSWORD',      '", {"Ref" : "DBPassword" }, "');\n",
+//                   "define('DB_HOST',          '", {"Fn::GetAtt" : ["MySQLDatabase", "Endpoint.Address"]},"');\n",
+
       echo "gethostname = ".gethostname(). "<br />";
 
-      print "Database = " . $Database . "<br />";
-
-      $conn = mysql_connect($Database, $DBUser, $DBPassword)
+      print "Database = " . DB_NAME . "<br />";
+      
+      $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT);
                       or die("Could not connect: " . mysql_error());
       print ("Connected successfully");
-      mysql_close($conn);
 
       // sql to create table
       $sql = "CREATE TABLE MyGuests (
@@ -59,17 +63,17 @@
           echo "Error: " . $sql . "<br>" . $conn->error;
       }
     
-    $sql = "SELECT id, firstname, lastname FROM MyGuests";
-    $result = $conn->query($sql);
+      $sql = "SELECT id, firstname, lastname FROM MyGuests";
+      $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
+      if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
             echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
         }
-    } else {
+      } else {
         echo "0 results";
-    }
+      }
 
       $conn->close();
  
