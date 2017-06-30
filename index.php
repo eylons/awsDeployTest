@@ -21,11 +21,12 @@
       
       echo "gethostname = ".gethostname(). "<br />";
 
-      print "Database = " . DB_DATABASE . "<br />";
+      print "Database = " . $Database . "<br />";
 
-      $conn = mysql_connect(DB_DATABASE, DB_USERNAME, DB_PASSWORD)
+      $conn = mysql_connect($Database, $DBUser, $DBPassword)
                       or die("Could not connect: " . mysql_error());
       print ("Connected successfully");
+      mysql_close($conn);
 
       // sql to create table
       $sql = "CREATE TABLE MyGuests (
