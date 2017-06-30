@@ -1,3 +1,4 @@
+<?php include "dbinfo.inc"; ?>
 <?php
     error_reporting( E_ALL );
 ?>
@@ -20,18 +21,11 @@
       
       echo "gethostname = ".gethostname(). "<br />";
 
-      $Database   = "REPLACE_WITH_DATABASE";
-      $DBUser     = "REPLACE_WITH_DBUSER";
-      $DBPassword = "REPLACE_WITH_DBPASSWORD";
+      print "Database = " . DB_DATABASE . "<br />";
 
-      print "Database = " . $Database . "<br />";
-    
-      // Create connection
-      $conn = new mysqli($servername, $username, $password, $dbname);
-      // Check connection
-      if ($conn->connect_error) {
-          die("Connection failed: " . $conn->connect_error);
-      } 
+      $conn = mysql_connect(DB_DATABASE, DB_USERNAME, DB_PASSWORD)
+                      or die("Could not connect: " . mysql_error());
+      print ("Connected successfully");
 
       // sql to create table
       $sql = "CREATE TABLE MyGuests (
