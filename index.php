@@ -28,7 +28,7 @@
 
       print "Database = " . DB_NAME . "<br />";
       
-      $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT);
+      $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT)
                       or die("Could not connect: " . mysql_error());
       print ("Connected successfully");
 
