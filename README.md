@@ -60,3 +60,10 @@ Database and tables creation and update should be done in more generic way using
 Website domain name (using route53)
 Limit the SSH for specific IP
 Size of Instances should be considered according requirements
+
+
+### Uninstall
+
+Login to AWS console, Go to ClouFormation, Choose the stackLampAZ stack and delete.
+
+
