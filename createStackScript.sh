@@ -10,8 +10,11 @@ aws cloudformation validate-template --template-body file://./stackTemplateLampA
 # Install
 aws cloudformation create-stack --stack-name stackLampAZ --template-body file://./stackTemplateLampAZ.json  --parameters file://./createStackScriptParams.json
 
-# List events example
-aws cloudformation describe-stack-events --stack-name stackLampAZ
-
 # Busy wait till state of stack is complete
 aws cloudformation wait stack-create-complete --stack-name stackLampAZ
+
+# List events
+aws cloudformation describe-stack-events --stack-name stackLampAZ
+
+# Show website URL
+aws cloudformation describe-stacks --stack-name stackLampAZ | grep OutputValue
