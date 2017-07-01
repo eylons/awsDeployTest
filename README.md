@@ -14,7 +14,7 @@ and will create the DB and get the latest code from git.
 
 - On the deploying computer:
 - pem file to access AWS account
-- AWS cli installed
+- AWS cli installed (pip install --upgrade awscli) and configured to access the correct region (e.g.: us-east-1)
 - The files from the Github repository
 ```
 createStackScript.sh
@@ -26,9 +26,10 @@ stackTemplateLampAZ.json
 
 On the local computer edit createStackScriptParams.json - Add the two TODO passwords
 There is option to add additional params like Instance type, RDS MZ and SSH location
+Open terminal from the project directory
 Run the createStackScript.sh from the shell
 (Installation might take few minutes).
-
+Login to https://console.aws.amazon.com/cloudformation to watch the events
 
 ### When done
 
@@ -43,6 +44,14 @@ SSL
 CloudFormation WaitGroup till installation will be done
 Ensure httpd is running
 Test in the end of deployment that we get the correct result from the DB, alert if not
+
+
+## Why I choose this solution
+
+Cloud formation is very comfortable way to version the infrastructure setup
+It can be maintain without coding
+Main disadvantages are that it will not work on other clouds and that it sometimes hides 
+the real causes of errors
 
 
 ## Improvements I would like to do
@@ -62,8 +71,7 @@ Limit the SSH for specific IP
 Size of Instances should be considered according requirements
 
 
-### Uninstall
+### Uninstalling
 
 Login to AWS console, Go to ClouFormation, Choose the stackLampAZ stack and delete.
-
 
