@@ -28,20 +28,21 @@ On the local computer edit createStackScriptParams.json - Add the two TODO passw
 There is option to add additional params like Instance type, RDS MZ and SSH location
 Open terminal from the project directory
 Run the createStackScript.sh from the shell
-(Installation might take few minutes).
-Login to https://console.aws.amazon.com/cloudformation to watch the events
+Installation might take few minutes and it will be busy till complete
+You will be prompt of the website URL
+Or you can :
+Login to https://console.aws.amazon.com/cloudformation to watch the events or outputs tab
 
 ### When done
 
-You will be prompt of the website URL.
-Wait few minutes and open a browser with this URL.
+Wait few minutes to let the instances finish init and open a browser with this URL.
 You should get an HTML page which show 'John', 'Doe', 'john@example.com' at least once.  
 
 
 ## What is missing
 
 SSL
-CloudFormation WaitGroup till installation will be done
+CloudFormation WaitGroup till instances installation will be done
 Ensure httpd is running
 Test in the end of deployment that we get the correct result from the DB, alert if not
 
@@ -74,4 +75,10 @@ Size of Instances should be considered according requirements
 ### Uninstalling
 
 Login to AWS console, Go to ClouFormation, Choose the stackLampAZ stack and delete.
+
+
+
+
+
+
 
