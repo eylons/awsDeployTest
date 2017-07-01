@@ -51,5 +51,12 @@ VPC with subnets to better control security
 In complex website different subnets and security groups for model, view, controller
 Better git schema (separate MVC, CloudFormation templates, etc..) 
 In complex libs dependencies use Docker
+Use infrastructure tools (Terraform)
 Use deployment tools (Chef, Ansible....)
 Add alerts and monitoring tools (dynatrace)
+Store static website data in cloudFront
+Use ElasticCache
+Database and tables creation and update should be done in more generic way using code
+Website domain name (using route53)
+Limit the SSH for specific IP
+Size of Instances should be considered according requirements
