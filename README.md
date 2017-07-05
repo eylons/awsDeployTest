@@ -65,7 +65,7 @@ Better git schema (separate MVC, CloudFormation templates, etc..)
 In complex libs dependencies use Docker
 Use infrastructure tools (Terraform)
 Use deployment tools (Chef, Ansible....)
-Add alerts and monitoring tools (dynatrace)
+Add alerts and monitoring tools (dynatrace, HostTracker - that check content of a test page)
 Store static website data in cloudFront
 Use ElasticCache
 Database and tables creation and update should be done in more generic way using code
