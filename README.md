@@ -45,7 +45,7 @@ You should get an HTML page which shows 'John', 'Doe', 'john@example.com' at lea
 SSL
 CloudFormation WaitGroup till instances installation will be done
 Ensure httpd is running
-Test in the end of deployment that we get the correct result from the DB, alert if not
+Test in the end of deployment that we get the correct result from the DB, alert if not - PHPUnit sanity tests
 
 
 ## Why I choose this solution
