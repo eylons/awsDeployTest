@@ -6,7 +6,6 @@
   "Parameters" : {
 
     "KeyName" : {
-      "Default": "DeployTestInstance1",
       "Description" : "Name of an existing EC2 KeyPair to enable SSH access to the instances",
       "Type" : "String",
       "MinLength": "1",
@@ -98,7 +97,6 @@
     },
     
     "GitUsername": {
-      "Default": "eylons",
       "NoEcho": "true",
       "Description" : "Username for Git access",
       "Type": "String",
