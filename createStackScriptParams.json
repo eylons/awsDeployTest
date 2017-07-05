@@ -1,10 +1,58 @@
 [
   {
-    "ParameterKey": "KeyPairName",
-    "ParameterValue": "MyKey"
+    "ParameterKey": "KeyName",
+    "ParameterValue": "DeployTestInstance1"
+  }, 
+  {
+    "ParameterKey": "DBName",
+    "ParameterValue": "DeployAssignmentDB1"
+  }, 
+  {
+    "ParameterKey": "DBUsername",
+    "ParameterValue": "deployuser1"
+  }, 
+  {
+    "ParameterKey": "DBPassword",
+    "ParameterValue": "TODO"
+  }, 
+  {
+    "ParameterKey": "DBAllocatedStorage",
+    "ParameterValue": "5"
+  }, 
+  {
+    "ParameterKey": "DBInstanceClass",
+    "ParameterValue": "db.m1.small"
+  }, 
+  {
+    "ParameterKey": "MultiAZDatabase",
+    "ParameterValue": "true"
+  }, 
+  {
+    "ParameterKey": "WebServerCapacity",
+    "ParameterValue": "2"
   }, 
   {
     "ParameterKey": "InstanceType",
-    "ParameterValue": "m1.micro"
+    "ParameterValue": "m1.small"
+  }, 
+  {
+    "ParameterKey": "WebServerCapacity",
+    "ParameterValue": "2"
+  }, 
+  {
+    "ParameterKey": "SSHLocation",
+    "ParameterValue": "0.0.0.0/0"
+  }, 
+  {
+    "ParameterKey": "GitUsername",
+    "ParameterValue": "eylons"
+  }, 
+  {
+    "ParameterKey": "GitPassword",
+    "ParameterValue": "TODO"
+  }, 
+  {
+    "ParameterKey": "GitUrl",
+    "ParameterValue": "eylons/awsDeployTest"
   }
 ]
