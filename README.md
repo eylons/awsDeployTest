@@ -1,14 +1,14 @@
-# Deploy website MZ RDS Assignment
+# Deploy website multi zone RDS Assignment
 
-Example of LAMP website deployed in two Autoscaling AZ controlled by a ELB, 
+Example of LAMP website deployed in two Autoscaling multi zone controlled by an ELB, 
 and reading from RDS Mysql DB
 
 ## How it works
 
 The shell script will activate aws cli command that will send a cloudFormation template,
-the template will create all the components needed in the AWS, the needed security groups,
-and will create the DB and get the latest code from git. 
-(in this case index.php which read from the DB).
+the template will create all the components needed in AWS, the needed security groups
+and the DB and gets the latest code from git. 
+(create.php that creates the DB, and index.php which reads from the DB).
 
 ### Prerequisites
 
@@ -24,19 +24,20 @@ stackTemplateLampAZ.json
 
 ### Installing
 
-On the local computer edit createStackScriptParams.json - Add the two TODO passwords
-There is option to add additional params like Instance type, RDS MZ and SSH location
+On the local computer
+Edit createStackScriptParams.json
+  Add the two TODO passwords
+  There is an option to add additional params like Instance type, RDS MZ and SSH location
 Open terminal from the project directory
-Run the createStackScript.sh from the shell
-Installation might take few minutes and it will be busy till complete
-You will be prompt of the website URL
-Or you can :
-Login to https://console.aws.amazon.com/cloudformation to watch the events or outputs tab
+  Run the createStackScript.sh from the shell
+  Installation might take few minutes and it will be busy till complete
+  You will be prompt of the website URL
+  You can find the website URL here https://console.aws.amazon.com/cloudformation in the outputs tab
 
 ### When done
 
-Wait few minutes to let the instances finish init and open a browser with this URL.
-You should get an HTML page which show 'John', 'Doe', 'john@example.com' at least once.  
+Wait few minutes to let the instances finish init and open a browser with the above URL.
+You should get an HTML page which shows 'John', 'Doe', 'john@example.com' at least once.
 
 
 ## What is missing
@@ -50,15 +51,16 @@ Test in the end of deployment that we get the correct result from the DB, alert 
 ## Why I choose this solution
 
 Cloud formation is very comfortable way to version the infrastructure setup
-It can be maintain without coding
-Main disadvantages are that it will not work on other clouds and that it sometimes hides 
-the real causes of errors
+It can be maintained without coding
+Main disadvantages of cloudFomrmation :
+1 - Not cloud agnostics - the solution would not work on other cloud environments than aws
+2 - Root cause analysis is not straight forward
 
 
 ## Improvements I would like to do
 
 VPC with subnets to better control security
-In complex website different subnets and security groups for model, view, controller
+In complex websites different subnets and security groups for model, view, controller
 Better git schema (separate MVC, CloudFormation templates, etc..) 
 In complex libs dependencies use Docker
 Use infrastructure tools (Terraform)
@@ -69,7 +71,7 @@ Use ElasticCache
 Database and tables creation and update should be done in more generic way using code
 Website domain name (using route53)
 Limit the SSH for specific IP
-Size of Instances should be considered according requirements
+Size and type of Instances should be selected according to scale and performance requirements
 
 
 ### Uninstalling
